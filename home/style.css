@@ -99,8 +99,12 @@ main{
         display: flex;
         flex-direction: column;
         gap: 10px;
-
-        input, button{
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        form input, form button{
             padding: 5px;
         }
         button{
