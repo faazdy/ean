@@ -5,7 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background-image: url("https://mcdonoughpartners.com/wp-content/uploads/2016/09/UNIVERSIDAD-EAN_36-1680x945.jpg");
+    background-image: url("imgs/universidaddddddddd.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@ main{
             padding: 5px;
         }
         button{
-            background-color: greenyellow;
+            background-color: #cecf20;
             border: 0;
             border-radius: 5px;
             cursor: pointer;

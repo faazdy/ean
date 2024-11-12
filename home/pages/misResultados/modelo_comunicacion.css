@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-image: url('https://mcdonoughpartners.com/wp-content/uploads/2016/09/UNIVERSIDAD-EAN_36-1680x945.jpg');
@@ -14,24 +9,24 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Contenedor principal */
 .container {
-    width: 95%;
-    width: 700px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 30px auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    margin-top: 30px;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
+/* Encabezado */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    background-color: #d9e7c3;
+    background-color: #cecf20;
     padding: 10px;
     border-radius: 8px 8px 0 0;
 }
@@ -58,6 +53,7 @@ header h1 {
     color: #e76f51;
 }
 
+/* Secciones */
 .info, .calificaciones, .teorica-practica, .detalles {
     margin-top: 20px;
 }
@@ -68,6 +64,13 @@ h2 {
     color: #333;
 }
 
+.progress-bar{
+    background-color: green;
+    height: 10px;
+    width: 100%;
+}
+
+/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -88,18 +91,43 @@ th {
 
 .progress-bar {
     height: 10px;
-    background-color: #8fa88c;
-    border-radius: 4px;
+    background-color: #4caf50;
+    border-radius: 5px;
 }
-
-.teorica-practica table, .calificaciones table {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    overflow: hidden;
+.table-mobile{
+    display: none;
 }
+/* Estilos responsivos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .table-pc{
+        display: none;
+    }
+    .progress-bar{
+        display: none;
+    }
+    .table-mobile {
+        display: table;
+        width: 100%;
+    }
+    
+    .table-mobile td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        position: relative;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+    }
 
-.detalles p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
+    .table-mobile tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Opcional: Añade un fondo para diferenciar el tipo de calificación */
+    .table-mobile td:first-child {
+        font-weight: bold;
+        color: #555;
+    }
 }

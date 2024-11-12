@@ -4,148 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pago.css">
     <title>Estado de Cuenta</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            height: 100vh;
-            background-color: #f5f5f5;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            background-color: #c4d034;
-            padding: 10px;
-            font-size: 1.2em;
-            color: #333;
-            display: flex;
-            align-items: center;
-        }
-        .header i {
-            font-size: 1.5em;
-            margin-right: 10px;
-        }
-        .header span {
-            font-weight: bold;
-        }
-        .sidebar {
-            background-color: #f5f5f5;
-            padding: 20px;
-            width: 100%;
-            display: inline-block;
-            vertical-align: top;
-        }
-        .balance {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .balance-value {
-            font-weight: bold;
-            font-size: 1.4em;
-        }
-        .label {
-            color: #777;
-        }
-        .balance-blue {
-            color: #1e8e88;
-        }
-        .balance-green {
-            color: #c4d034;
-        }
-        .table-container {
-            width: 70%;
-            display: inline-block;
-            vertical-align: top;
-            padding: 20px;
-        }
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-        .table th, .table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .table th {
-            color: #777;
-            cursor: pointer;
-        }
-        .no-data {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <div class="back">
-                    <a href="../index.html">
-                        <img src="../imgs/back.png" alt="">
-                    </a>
-                </div>
-                <a href="../index.html">
-                    <img src="../imgs/sapCompanyLogo.png" alt="">
-                </a>
-                <select name="" id="">
-                    <option value="">Pagina principal</option>
-                </select>
-            </div>
-            <div class="opts">
-                <img src="../imgs/noti.png" alt="">
-                <img src="../imgs/user.png" alt="">
-            </div>
-        </nav>
-        <h6 class="h6">Estudiante</h6>
+        <div class="back-logo-container">
+            <button class="back-btn" onclick="window.location.href='../index.html'">Atrás</button>
+            <!-- Hacer que la imagen funcione como un enlace -->
+            <a href="../index.html">
+                <img src="../imgs/sapCompanyLogo.png" alt="Logo SAP" class="logo-ean">
+            </a>
+        </div>
     </header>
-<div class="container">
-    <div class="header">
-        <i class="arrow-back">&lt;</i> <span>ESTADO DE CUENTA</span> (5)
+    
+    <div class="main-container">
+        <div class="header-section">
+            <h2 class="title">ESTADO DE CUENTA</h2>
+        </div>
+        <div class="sidebar">
+            <button class="balance-button" onclick="showContent('saldo')">Saldo a la fecha</button>
+            <button class="balance-button" onclick="showContent('academico')">Conceptos Académicos</button>
+            <button class="balance-button" onclick="showContent('no_academico')">Conceptos No Académicos</button>
+            <button class="balance-button" onclick="showContent('financiacion')">Financiación</button>
+            <button class="balance-button" onclick="showContent('subvenciones')">Subvenciones</button>
+            <button class="balance-button" onclick="showContent('pagos')">Pagos</button>
+        </div>
+        <div class="table-container">
+            <h2 class="program-title" id="section-title">Conceptos Académicos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Número de documento</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td colspan="5" class="no-data">No hay conceptos disponibles</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="sidebar">
-        <div class="balance">
-            <span>Saldo a la fecha</span>
-            <span class="balance-value balance-blue">1.695.785 COP</span>
-        </div>
-        <div class="balance">
-            <span>Conceptos Académicos</span>
-            <span class="balance-value balance-green">0 COP</span>
-        </div>
-        <div class="balance">
-            <span>Conceptos No Académicos</span>
-            <span class="balance-value">0 COP</span>
-        </div>
-        <div class="balance">
-            <span>Financiación</span>
-            <span class="balance-value">1.695.785 COP</span>
-        </div>
-        <div class="balance">
-            <span>Subvenciones</span>
-            <span class="balance-value">0 COP</span>
-        </div>
-        <div class="balance">
-            <span>Pagos</span>
-            <span class="balance-value">0 COP</span>
-        </div>
-    </div>
-    <div class="info">
-        
-    </div>
-</div>
-
+    <script src="pago.js"></script>
 </body>
 </html>
